@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>Tuyen ngon doc lap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    
+
+    
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+      </div>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"888888888
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">NNT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/truongkiwi/">TUi LA AI </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <img src="HCM4.jpg" alt="">
+        <div class="carousel-item active">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Ho Chi Minh</h1>
+              <p class="opacity-75">Trong tù không rượu cũng không hoa
+                Cảnh đẹp đêm nay, khó hững hờ
+                Người ngắm trăng soi ngoài cửa sổ
+                Trăng nhòm khe cửa ngắm nhà thơ.</p>
+              <p><a class="btn btn-lg btn-primary" href="./signup.html">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="VVV.jpg" alt="">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Vo Nguyen Giap</h1>
+              <p>Cả Việt Nam văn đức thấm sâu
+  
+                Khắp năm châu võ công chấn động</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="LLL.jpg" alt="">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>Ly Thuong Kiet</h1>
+              <p>Nam quốc sơn hà Nam đế cư
+                Tiệt nhiên định phận tại thiên thư
+                Như hà nghịch lỗ lai xâm phạm
+                Nhữ đẳng hành khan thủ bại hư.</p>
+              <p><a class="btn btn-lg btn-primary" href="./signin.html">Sign in today</a></p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+     <!-- Three columns of text below the carousel -->
+     <div class="row">
+        <div class="col-lg-4">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <h2 class="fw-normal">Ho Chi Minh</h2>
+          <p>Chu Tich Nuoc Dau Tien Cua Viet Nam</p>
+          <p><a class="btn btn-secondary" href="./HCM.html">Xem Them &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <h2 class="fw-normal">Vo Nguyen Giap</h2>
+          <p>Dai Tuong Noi Tieng Khap 5 Chau</p>
+          <p><a class="btn btn-secondary" href="./Vo nguyen giap.html">Xem Them &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <h2 class="fw-normal">Ly Thuong kiet</h2>
+          <p>Vi Tuong Dem Quan Danh Trung Quoc Dau Tien Trong Lich Su Viet Nam</p>
+          <p><a class="btn btn-secondary" href="./Ly Thuong kiet.html">Xem Them &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      
+    </div><!-- /.row -->
+
+    <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Thông tin về Hồ Chí Minh</h2>
+        <p class="blog-post-meta">August 1, 2023 by Khoi Vu </p>
+
+        <hr>
+        <p>:0</p>
+        <h2> Hồ Chí Minh</h2>
+        <p> Nguồn: Wikipedia</p>
+        <blockquote class="blockquote">
+          <p>Hồ Chí Minh (19 tháng 5 năm 1890 – 2 tháng 9 năm 1969), tên khai sinh là Nguyễn Sinh Cung,
+             còn được biết với tên gọi Bác Hồ, là một nhà cách mạng và chính khách người Việt Nam. Ông 
+             là người sáng lập Đảng Cộng sản Việt Nam, từng là Chủ tịch nước Việt Nam Dân chủ Cộng hoà 
+             từ 1945–1969, Thủ tướng Việt Nam Dân chủ Cộng hòa trong những năm 1945–1955, Tổng Bí thư 
+             Ban Chấp hành Trung ương Đảng Lao động Việt Nam từ 1956–1960, Chủ tịch Ban Chấp hành Trung
+              ương Đảng Lao động Việt Nam từ năm 1951 cho đến khi qua đời.</p>
+        </blockquote>
+        <img src="https://hdll.vn/FileUpload/Images/unnamed__18.jpg"
+          alt="" class="center">
+          <h2>Lai lịch của ông</h2>
+          <p><b>Ngày, nơi sinh:</b> 9/5/1890, Kim Liên</p>
+          <p><b>Ngày mất:</b> 2/9/1969, Hà Nội</p>
+          <p><b>Quốc tịch:</b> Việt Nam</p>
+
+          <h3>Xuất thân và quê quán</h3>
+        <ul>
+          <p>Theo nhiều tài liệu chính thống cũng như tiểu sử tại Việt Nam, tên lúc nhỏ của Hồ Chí Minh 
+            là Nguyễn Sinh Cung (giọng địa phương phát âm là Côông). Tuy nhiên, một số tài liệu ghi
+             nhận tên lúc nhỏ của ông là Nguyễn Sinh Côn. Điều này cũng được chính ông xác
+              nhận bằng chính bút tích của mình trong một bài viết năm 1954. Quê nội ông là làng Kim
+               Liên (tên Nôm là làng Sen). Nguyễn Sinh Cung sinh năm 1890 tại quê ngoại là làng Hoàng Trù 
+               (tên Nôm là làng Chùa), nằm cách làng Sen khoảng 2 km và sống ở đây cho đến năm 1895. Hai 
+               làng này vốn cùng nằm trong xã Chung Cự, thuộc tổng Lâm Thịnh, huyện Nam Đàn. Quê nội của ông,
+                làng Kim Liên là một làng quê nghèo khó. Phần lớn dân chúng không có ruộng, phải làm thuê 
+                cấy rẽ, mặc quần ít, đóng khố nhiều, bởi thế nên làng này còn có tên là làng Đai Khố. Vào 
+                đời ông, phần lớn dòng họ của ông đều cơ hàn, kiếm sống bằng nghề làm thuê, và cũng có người
+tham gia các hoạt động chống Pháp.</p>
+
+          <p>Cha của Nguyễn Sinh Cung là một nhà Nho tên là Nguyễn Sinh Sắc (1862–1929), từng đỗ Phó bảng.
+             Mẹ ông là bà Hoàng Thị Loan (1868–1901). Nguyễn Sinh Cung có một người chị là Nguyễn Thị Thanh
+              (sinh năm 1884), một người anh là Nguyễn Sinh Khiêm (sinh năm 1888, tự Tất Đạt, còn gọi là Cả
+               Khiêm) và một người em trai mất sớm là Nguyễn Sinh Nhuận (1900–1901, tên khi mới lọt lòng là Xin).</p>
+        </ul>
+        <h3>Tên gọi, bí danh, bút danh</h3>
+          <p>Sau nhiều năm hoạt động trong nước và ngoài nước, Hồ Chí Minh đã dùng rất nhiều bí danh và tên gọi khác nhau, 
+          trong đó có 173 bút danh. Tuy nhiên, danh xưng Hồ Chí Minh được chọn là tên gọi chính thức của ông và được 
+          nhiều người chấp nhận nhất. Theo một số tài liệu thì ông bắt đầu sử dụng danh xưng Hồ Chí Minh từ năm 1940 nhưng 
+          không ai biết cho đến khi bị chính quyền Trung Quốc bắt do nghi ngờ là gián điệp vào năm 1942. Từ đó ông bắt đầu 
+          công khai và dùng tên gọi Hồ Chí Minh với mọi người. Và từ đó trở đi danh xưng Hồ Chí Minh đã trở thành tên gọi 
+          chính thức của ông.</p>
+        
+        <h3>Cuộc sống cá nhân</h3>
+        <p>Hồ Chí Minh là người nghiện thuốc lá nặng. Trong buổi tiếp William C. Baggs, biên tập viên của Tin tức Miami tại 
+          Hà Nội đầu năm 1967, ông liên tục hút thuốc, loại thuốc lá Mỹ nhãn hiệu Salem. Ông ăn mặc đúng mực, lịch thiệp, nhạy
+           cảm và không tạo áp lực lên người khác. Kiểu ăn mặc thường là áo pijama trắng cao cổ, đi dép cao su. Ông Harry 
+           Ashmore, người của Trung tâm nghiên cứu của các tổ chức dân chủ và cựu biên tập viên của Công báo Arkansas nhận xét
+            Hồ Chí Minh là "một người có phong thái tao nhã, rất tinh tế với một cách xử sự nhẹ nhàng và không có tâm địa cá nhân...".</p>
+
+        <p>Ngày 19 tháng 5 năm 1946, sinh nhật Hồ Chí Minh lần đầu tiên được tổ chức nhằm mục đích nâng cao tinh thần đoàn kết dân tộc
+          . Dù là người đứng đầu một nước nhưng sinh nhật của ông được tổ chức rất đơn sơ, giản dị và mộc mạc. Những năm sau đó, sinh
+           nhật của ông thường chỉ được tổ chức vào năm chẵn, còn các năm khác thì ông thường lặng lẽ tổ chức một bữa "ăn tươi" nho nhỏ
+với vài cán bộ thân cận. Trong hai lần sinh nhật cuối đời, Hồ Chí Minh đều lấy dự thảo di chúc ra sửa lại. Tuy ông là 
+            chủ tịch của một nước nhưng đời sống sinh hoạt hằng ngày cũng chẳng khác mấy so với người thường. Ông sống trong một căn nhà 
+            sàn. Bữa ăn đạm bạc của ông đã được nhận xét là rất giản dị và đơn sơ với thức ăn đạm bạc, mộc mạc, dân dã như bao người dân
+             Việt Nam khác và theo Thủ tướng Phạm Văn Đồng, người đã nhiều lần ăn chung với ông, nhận xét ông ăn vừa đủ không bỏ món thừa
+              và ăn không sót một hột cơm vì ông tôn trọng thành quả lao động của nông dân.</p>
+
+        <p>Theo Giáo sư Hoàng Chí Bảo, Hồ Chí Minh nói được 29 thứ tiếng, chưa kể tiếng đồng bào các tộc người ở Việt Nam, trong đó ông nói
+           thành thạo các thứ tiếng gồm: Nga, Pháp, Trung Quốc, Anh, Ý. Trong bản lý lịch đại biểu dự Đại hội Quốc tế Cộng sản lần thứ 7, Hồ
+            Chí Minh được miêu tả: "Biết các thứ tiếng: Pháp, Anh, Trung Quốc, Ý, Đức, Nga, Tây Ban Nha và Bồ Đào Nha". Bên cạnh đó, theo lịch 
+            sử ghi chép về các chuyến công du nước ngoài hoặc tiếp đón ngoại giao, Chủ tịch Hồ Chí Minh còn có khả năng nói Tiếng Xiêm (Thái Lan
+             bây giờ), tiếng Tây Ban Nha, tiếng Ả Rập. Tuy nhiên, theo nhà phê bình văn học Thụy Khuê thì trình độ tiếng Pháp của ông ở
+              mức cơ bản, thậm chí còn trích dẫn báo cáo ngày 20/1/1921 của điều tra viên Josselme rằng: "Những ai biết tiếng Pháp và đọc những
+               văn bản ký tên Nguyễn Ái Quốc đều thấy một sự thực hiển nhiên: Nguyễn Tất Thành không thể viết những bài báo ký tên Nguyễn Ái 
+               Quốc."</p>
+
+        <h3>Sự nghiệp</h3>
+        <h4>Hoạt động cách mạng ở nước ngoài</h4>
+        <p>Hoạt động cách mạng ở nước ngoài của Hồ Chí Minh kéo dài từ năm 1911 đến năm 1941 khi người quay lại Việt Nam. Cụ thể có thể nhắc
+           đến một số hoạt động nổi bật sau:</p>
+        <ul>
+          <li>Tháng 6/1911, người bắt đầu lên tàu ra nước ngoài với mục tiêu ra đi tìm đường cứu nước. Người từng đặt chân đến nhiều quốc gia và châu lục trên thế giới như châu Âu, châu Phi, châu Á và châu Mỹ.</li>
+          <li>Tháng 12/1920, người bỏ phiếu tán thành việc gia nhập Quốc Tế Cộng Sản, đồng thời tham gia thành lập Đảng cộng sản Pháp.</li>
+<li>Năm 1921, người tham gia vào quá trình thành lập Hội Liên hiệp các dân tộc thuộc địa tại Pháp. Người viết nhiều bài đăng trên các trang báo, tiêu biểu như “Người cùng khổ” hay “Bản án chế độ thực dân Pháp.</li>
+          <li>Tháng 6/1923, người đến Liên Xô và bắt đầu giai đoạn hoạt động cách mạng tại quốc gia này theo chủ nghĩa Mác Lênin.</li>
+          <li>Tháng 1-0/1923, người được bầu vào Đoàn Chủ tịch Quốc tế Nông dân tại Đại hội lần thứ I Quốc tế Nông dân.</li>
+          <li>Năm 1925, tại Quảng Châu, người đã tham gia thành lập nên Hội Liên hiệp các dân tộc bị áp bức Á Đông đồng thời sáng lập Hội Việt Nam Cách mạng Thanh niên.</li>
+          <li>Ngày 3/2/1930, trước sự chia rẽ của các phe phái, người đã triệu tập hội nghị hợp nhất các tổ chức cộng sản trong nước tại Cửu Long (Hồng Kông), từ đó Đảng cộng sản Việt Nam ra đời.</li>
+          <li>Trong giai đoạn từ 1930 đến 1940, người vẫn duy trì tham gia các hoạt động của Quốc tế Cộng sản tại nước ngoài và theo dõi phong trào cộng sản trong nước, đồng thời đưa ra những chỉ đạo đúng đắn cho Ban Chấp hành Trung ương Đảng ta.</li>
+        </ul>
+
+        <h4>Hoạt động cách mạng tại Việt Nam</h4>
+        <p>Sau 30 năm bôn ba ở nước ngoài, vào năm 1941, người đã chính thức vượt qua biên giới Trung Quốc để về Việt Nam, trực tiếp chỉ đạo đường lối kháng chiến chống Pháp, thành lập mặt trận Việt Minh.</p>
+
+        <ul>
+          <li>Theo chỉ thị của Hồ Chí Minh, ngày 22/12/1944, Hội Việt Nam tuyên truyền giải phóng quân đã chính thức được thành lập do đồng chí Võ Nguyên Giáp làm chỉ huy.</li>
+          <li>Ngày 2/9/1945, người đọc bản Tuyên Ngôn Độc Lập, khai sinh ra nước Việt Nam dân chủ cộng hòa.</li>
+          <li>Tháng 8/1945, Bác Hồ triệu tập Hội nghị toàn quốc của Đảng, toàn đại hội tán thành chủ trương tổng khởi nghĩa. Hưởng hững lời kêu gọi của Hồ Chủ Tịch, toàn dân tộc Việt Nam đã đồng lòng đứng lê, tiến hành cuộc tổng khởi nghĩa vũ trang giành chính quyền</li>
+          <li>Tháng 9/1945, người được bầu là Chủ tịch Chính phủ Liên hiệp kháng chiến.</li>
+          <li>Tháng 12/1946, Bác Hồ một lần nữa kêu gọi nhân dân toàn quốc kháng chiến chống thực dân.</li>
+          <li>Tháng 7/1954, hiệp định Giơnevơ được ký kết sau thắng lợi của chiến dịch Điện Biên Phủ.</li>
+          <li>Tháng 9/1960, Hồ Chí Minh được bầu vào vai trò Chủ tịch Ban Chấp hành Trung ương Đảng</li>
+<li>Ngày 2/9/1969, sau những nỗ lực của đội ngũ giáo sư, bác sĩ nhưng vì lý do tuổi cao sức yếu, Người đã từ trần và hưởng thọ 79 tuổi.</li>
+        </ul>
+      </article>
+      <article class="blog-post">
+        <h3 class="display-5 link-body-emphasis mb-1">Nguồn tham khảo</h3>
+        <p class="blog-post-meta">August 1, 2023 by Khoi Vu</p>
+        <a href="https://vi.wikipedia.org/wiki/H%E1%BB%93_Ch%C3%AD_Minh"> click here</a>
+        <table class="table">
+            </tr>
+          </tfoot>
+        </table>
+      </article>
+</main>
+
+
+
+
+
+
+     <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2017–2023 Cong Ty 1 Thanh Vien , Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

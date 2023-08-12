@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>Tuyen ngon doc lap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    
+
+    
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+      </div>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"888888888
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">NNT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/truongkiwi/">TUi LA AI </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <img src="HCM4.jpg" alt="">
+        <div class="carousel-item active">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Ho Chi Minh</h1>
+              <p class="opacity-75">Trong tù không rượu cũng không hoa
+                Cảnh đẹp đêm nay, khó hững hờ
+                Người ngắm trăng soi ngoài cửa sổ
+                Trăng nhòm khe cửa ngắm nhà thơ.</p>
+              <p><a class="btn btn-lg btn-primary" href="./signup.html">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="VVV.jpg" alt="">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Vo Nguyen Giap</h1>
+              <p>Cả Việt Nam văn đức thấm sâu
+  
+                Khắp năm châu võ công chấn động</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="LLL.jpg" alt="">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>Ly Thuong Kiet</h1>
+              <p>Nam quốc sơn hà Nam đế cư
+                Tiệt nhiên định phận tại thiên thư
+                Như hà nghịch lỗ lai xâm phạm
+                Nhữ đẳng hành khan thủ bại hư.</p>
+              <p><a class="btn btn-lg btn-primary" href="./signin.html">Sign in today</a></p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <h2 class="fw-normal">Ho Chi Minh</h2>
+          <p>Chu Tich Nuoc Dau Tien Cua Viet Nam</p>
+          <p><a class="btn btn-secondary" href="./HCM.html">Xem Them &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <h2 class="fw-normal">Vo Nguyen Giap</h2>
+          <p>Dai Tuong Noi Tieng Khap 5 Chau</p>
+          <p><a class="btn btn-secondary" href="./Vo nguyen giap.html">Xem Them &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+          <h2 class="fw-normal">Ly Thuong kiet</h2>
+          <p>Vi Tuong Dem Quan Danh Trung Quoc Dau Tien Trong Lich Su Viet Nam</p>
+          <p><a class="btn btn-secondary" href="./Ly Thuong kiet.html">Xem Them &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Thông tin về Võ Nguyên Giáp</h2>
+        <p class="blog-post-meta">August 1, 2023 by <a href="#">Nguyễn Nhựt Trường</a></p>
+    
+        <p>:0</p>
+        <hr>
+        <h2> Võ Nguyên Giáp</h2>
+        <p> Nguồn : wikipedia</p>
+        <blockquote class="blockquote">
+          <p>Võ Nguyên Giáp là một nhà quân sự, nhà chính trị cũng như tướng rất nổi tiếng vào thời chiến tranh chống pháp chống mỹ của nhân dân ta. Ông làm quan qua 3 triều Lý Thái Tông, Lý Thánh Tông, Lý Nhân Tông và đạt được nhiều thành tựu to lớn, khiến ông trở thành một trong hai danh tướng vĩ đại nhất nhà Lý, bên cạnh Lê Phụng Hiểu. </p>
+        </blockquote>
+        <img src="VVV.jpg"
+          alt="" class="center">
+
+  
+Võ Nguyên Giáp (25 tháng 8 năm 1911 – 4 tháng 10 năm 2013), tên khai sinh là Võ Giáp,[a] còn được gọi là tướng Giáp hoặc anh Văn, là một nhà lãnh đạo quân sự và chính trị gia người Việt Nam. Ông là Đại tướng đầu tiên, Tổng Tư lệnh tối cao của Quân đội Nhân dân Việt Nam, một trong những thành viên sáng lập nhà nước Việt Nam Dân chủ Cộng hòa, được Chính phủ Việt Nam đánh giá là "người học trò xuất sắc và gần gũi của Chủ tịch Hồ Chí Minh",[1][2] là chỉ huy trưởng của các chiến dịch trong Chiến tranh Đông Dương (1946–1954), Chiến tranh Việt Nam (1955–1975) và Chiến tranh biên giới Việt – Trung (1979).
+
+Xuất thân là một giáo viên dạy lịch sử, ông được đánh giá là một trong những nhà lãnh đạo quân sự lỗi lạc nhất trong lịch sử Việt Nam.[3] Ông được nhiều tờ báo ca ngợi là anh hùng dân tộc của nhân dân Việt Nam.[4][5][6]
+
+Thân thế
+Võ Nguyên Giáp sinh ngày 25 tháng 8 năm 1911 ở làng An Xá, tổng Đại Phong Lộc, huyện Lệ Thủy, phủ Quảng Ninh (nay là xã Lộc Thủy, huyện Lệ Thủy, tỉnh Quảng Bình) trong một gia đình nhà nho, con của ông Võ Quang Nghiêm (Võ Nguyên Thân), một nhà nho đức độ và mẹ là bà Nguyễn Thị Kiên.[7][8][9][10]
+
+Về họ ngoại, ông ngoại Võ Nguyên Giáp quê ở thôn Mỹ Đức, xã Sơn Thủy, huyện Lệ Thủy, đầu nguồn sông Cẩm Ly, một vùng sơn cước, dưới dãy Trường Sơn; từng tham gia Phong trào Văn Thân và Phong trào Cần Vương,[11] làm đến chức Đề đốc coi đại đồn tiền vệ, sau bị quân Pháp bắt, tra tấn dã man, nhưng một mực trung thành, không một lời khai báo.
+
+Về họ nội, Võ Nguyên Giáp sinh trưởng trong một dòng họ lớn, có tiếng tăm tại làng An Xá. Ông nội ông cũng từng tham gia phò tá vua Hàm Nghi trong Phong trào Cần Vương. Cha ông, Võ Quang Nghiêm, là một nho sinh thi cử bất thành về nhà làm hương sư và thầy thuốc Đông y trong làng. Khi Chiến tranh Đông Dương bùng nổ, cụ Võ Quang Nghiêm bị người Pháp bắt, đưa về giam ở Huế và mất trong tù (sau này, con cháu đã tìm thấy và bốc mộ ông đưa về an táng tại nghĩa trang liệt sĩ huyện Lệ Thủy).
+
+Gia đình Võ Nguyên Giáp có 7 anh chị em, nhưng người anh cả và chị cả mất sớm vì bệnh và thiên tai, 2 người khác cũng mất trước chiến dịch Điện Biên Phủ. Sau 1954, gia đình chỉ còn 2 người con trai là Võ Nguyên Giáp và Võ Thuần Nho, sau này là Thứ trưởng Bộ Giáo dục, và người em gái là bà Võ Thị Lài.
+
+
+
+Cha ông là một nhà Nho nên dạy dỗ con cái rất nghiêm cẩn trong sinh hoạt gia đình và học hành, giữ gìn nề nếp gia phong của đạo Khổng. Ông khuyên dạy con: "Chữ Nho là chữ của Thánh hiền, là nho sinh, các con không được nghịch ngợm, dẫm đạp lên sách vở chữ Nho". Ông dạy đám học trò cùng hai con ông: Tam thiên tự, Ngũ thiên tự và cả Ấu học tân thư. Năm tháng học chữ Nho không nhiều, nhưng những đạo lý học được trong các sách của Thánh hiền Nho gia, đặc biệt là Ấu học tân thư, đã trở thành nền tảng cơ bản có ảnh hưởng sâu sắc trong cả cuộc đời ông. Trong thế giới quan Nho giáo, cả ba yếu tố: cá nhân, gia đình và dân tộc đều hòa quyện chặt chẽ với nhau. Qua sách Ấu học tân thư, cậu Giáp được biết tới nhiều tấm gương quên mình để bảo vệ Tổ quốc, hình thành trong cậu niềm tự hào về các chiến công của cha ông trong quá khứ. Những giá trị đạo đức, nề nếp gia phong của đạo Khổng thấm nhuần trong con người cậu: lối sống giản dị và đức hiếu học, sự kính trọng tổ tiên và ông bà cha mẹ, sự kính trên nhường dưới, đạo hiếu của con cái với cha mẹ, nghĩa vụ của con người với gia đình, xã hội và đất nước.[15]
+
+Học xong lớp 3, cậu phải xuống thị xã Đồng Hới học tiếp, Đồng Hới thuộc tỉnh lỵ Quảng Bình, cách làng An Xá của cậu trên 20 km, nằm bên bờ Nhật Lệ trong xanh lung linh soi bóng Lũy thầy, với thành cổ bao quanh từ thời Gia Long năm thứ 10 (1812) và được xây lại bằng gạch năm Minh Mạng thứ sáu (1825).
+
+Những năm học ở thị xã Đồng Hới, cậu Giáp ở trọ nhà người quen của cụ Nghiêm. Cậu được gia chủ quý mến coi như con cháu trong nhà, không lấy tiền trọ, cậu được học với nhà sư phạm có tiếng, thầy giáo Đào Duy Anh. Hai năm học ở tiểu học Đồng Hới, hàng tháng cậu luôn đứng đầu lớp. Tại kỳ thi tốt nghiệp bậc sơ học, cậu đỗ đầu toàn tỉnh. Hồi đó, đạt được trình độ ấy là không dễ, vì thực dân Pháp hạn chế mở trường học và muốn duy trì nạn mù chữ để dễ cai trị.[16] Về làng cậu được dân làng nể trọng, gia đình rất tự hào về cậu.[17]
+
+Năm 13 tuổi (1923-1924), Võ Nguyên Giáp thi trượt trường Quốc học Huế. Trường này chỉ tuyển 90 học sinh cho 12 tỉnh miền Trung Việt Nam.[18][19][20]
+
+Năm 1925, Võ Nguyên Giáp rời trường Tiểu học Đồng Hới ở quê nhà Quảng Bình để vào Huế ôn thi vào trường Quốc học Huế (ông đỗ thứ hai sau Nguyễn Thúc Hào). Trong 2 năm học, ông luôn đứng đầu lớp trừ 1 tháng bị rớt xuống hạng nhì. Trong thời gian này, cậu Giáp có vài lần đến thăm nhà yêu nước Phan Bội Châu để nghe thuyết giảng về lý tưởng Cách mạng. Trên tường nhà Cụ Châu có treo những nhà tư tưởng nổi bật mà cụ tôn kính là Tôn Dật Tiên, Vladimir Ilyich Lenin và Đức Phật Thích Ca, điều đó khiến cậu càng say mê theo đuổi chân lý của lịch sử.[21]
+
+Năm 1927, ông bị đuổi học cùng với Nguyễn Chí Diểu, Nguyễn Khoa Văn (tức Hải Triều), Phan Bôi sau khi tổ chức một cuộc bãi khóa. Ông về quê và được Nguyễn Chí Diểu giới thiệu tham gia Tân Việt Cách mạng Đảng, một đảng theo chủ nghĩa dân tộc nhưng có màu sắc cộng sản thành lập năm 1924 ở miền Trung Việt Nam. Nguyễn Chí Diểu cũng giới thiệu Võ Nguyên Giáp vào làm việc ở Huế, tại nhà xuất bản Quan hải tùng thư do Đào Duy Anh sáng lập và ở báo Tiếng dân của Huỳnh Thúc Kháng. Tại đây, Võ Nguyên Giáp bắt đầu học nghề làm báo, chuẩn bị cho giai đoạn hoạt động báo chí trong thời Mặt trận Bình dân Pháp.
+
+Thời thanh niên
+Tháng 4 năm 1927, tại Trường Quốc học Huế lại diễn ra một cuộc bãi khóa rầm rộ với quy mô lớn. Nguyễn Chí Diểu bị tên giám thị Pháp chú ý, coi là kẻ cầm đầu những cuộc đấu tranh bãi khóa ở trường, nên đuổi học. Võ Nguyên Giáp liền bàn với Nguyễn Khoa Văn tiếp tục tổ chức bãi khóa để phản đối việc Diểu bị đuổi học. Cuộc bãi khóa của học sinh Trường Quốc học Huế lan rộng ra khắp các trường ở Huế và phát triển thành cuộc tổng bãi khóa. Võ Nguyên Giáp bị bắt rồi bị đuổi học, phải trở về quê nhà. Bỗng nhiên một hôm Nguyễn Chí Diểu lặn lội từ Huế về làng An Xá tìm gặp Võ Nguyên Giáp. Nguyễn Chí Diểu mang theo một tập tài liệu về "Liên đoàn các dân tộc bị áp bức trên thế giới" và một số văn kiện cuộc họp của Việt Nam Thanh niên Cách mạng Đồng chí Hội ở Quảng Châu, trong đó có 2 bài phát biểu của lãnh tụ Nguyễn Ái Quốc. Võ Nguyên Giáp đọc rất xúc động: "Bài luận văn của Nguyễn Ái Quốc đã gây cho chúng tôi một lòng căm phẫn sâu sắc như một luồng điện giật". Đó là sợi dây đầu tiên nối liền số mệnh của Võ Nguyên Giáp với Hồ Chí Minh và sự nghiệp Cách mạng Việt Nam.[22]
+
+Mùa hè năm 1928, Võ Nguyên Giáp trở lại Huế, bước vào đời của một chiến sĩ cách mạng. Tại Huế, Nguyễn Chí Diểu giới thiệu Võ Nguyên Giáp đến làm việc ở Quan Hải Tùng thư, một nhà xuất bản do Tổng bộ Tân Việt chủ trương, trụ sở đặt ở phố Đông Sa. Sáng lập viên là Đào Duy Anh. Tại đây Võ Nguyên Giáp có điều kiện tiếp xúc với những học thuyết kinh tế, xã hội, dân tộc, cách mạng. Đặc biệt là cuốn "Bản án chế độ thực dân Pháp" và tờ báo "Người cùng khổ" (Le Paria) do Nguyễn Ái Quốc viết từ Pháp gửi về.
+
+Đầu tháng 10 năm 1930, trong sự kiện Xô Viết Nghệ Tĩnh, Võ Nguyên Giáp bị bắt và bị giam ở Nhà lao Thừa phủ (Huế), cùng với người yêu là Nguyễn Thị Quang Thái, em trai là Võ Thuần Nho và các giáo sư Đặng Thai Mai, Lê Viết Lượng... Sau này Nguyễn Thị Quang Thái trở thành vợ đầu tiên của Võ Nguyên Giáp và sinh cho ông một con gái tên là Võ Hồng Anh. Nguyễn Thị Quang Thái hẹn với ông rằng khi con cứng cáp sẽ đi thoát ly hoạt động. Nhưng cả hai không ngờ lần chia tay năm 1940 cũng là lần vĩnh biệt, Nguyễn Thị Quang Thái bị Pháp bắt giam và chết ngay trong ngục tù. Bà qua đời khi còn rất trẻ, nhiều người biết đến bà như một hình tượng người phụ nữ mẫu mực, kiên trung, yêu nước.[23][24]
+
+Cuối năm 1931, nhờ sự can thiệp của Hội Cứu tế Đỏ của Pháp, Võ Nguyên Giáp được trả tự do nhưng lại bị Công sứ Pháp tại Huế ngăn cấm không cho ở lại Huế. Ông ra Hà Nội, học trường Albert Sarraut và đỗ. Ông nhận bằng cử nhân luật năm 1937 (Licence en Droit). Do bận rộn hoạt động cách mạng, vào năm 1938, ông bỏ dở học chương trình năm thứ tư về Kinh tế Chính trị và không lấy bằng Luật sư.[25]
+
+Từ 1936 đến 1939, Võ Nguyên Giáp tham gia phong trào Mặt trận Dân chủ Đông Dương, là sáng lập viên của mặt trận và là Chủ tịch Ủy ban Báo chí Bắc Kỳ trong phong trào Đông Dương đại hội. Ông tham gia thành lập và làm báo tiếng Pháp Notre voix (Tiếng nói của chúng ta), Le Travail (Lao động), biên tập các báo Tin tức, Dân chúng.
+
+Tháng 5 năm 1939, Võ Nguyên Giáp nhận dạy môn lịch sử tại Trường Tư thục Thăng Long, Hà Nội do Hoàng Minh Giám làm giám đốc nhà trường.[26] Học sinh của ông mô tả rằng: ông có thể vẽ lên bảng đen sơ đồ từng trận đánh của Napoléon, ông sôi nổi kể về Công xã Paris, về cái chết của những nhà Cách mạng như Danton và Robespierre, "ông không chỉ là nhà sử học đơn thuần, ông còn là một trạng sư say mê, luôn bênh vực tính chính nghĩa của lịch sử".[27] Học trò của Võ Nguyên Giáp là Bùi Diễm, sau này trở thành đại sứ Việt Nam Cộng hòa tại Mỹ, nhớ về ông như một người bị "quỷ thần ám ảnh về cách mạng và các trận chiến". Người ta kể lại khi một giáo viên khác hỏi ông "Không chơi kiểu Napoleon à?", ông đã trả lời "Mình sẽ là một Napoleon". Sau này, khi trả lời phỏng vấn, ông hay có điệu bộ như hoàng đế Napoleon đang độc thoại trước các nhà báo.[27]
+
+Bắt đầu sự nghiệp quân sự
+Kháng chiến chống Pháp, Nhật trong Chiến tranh thế giới thứ hai
+
+Võ Nguyên Giáp (ngoài cùng bên trái) trong buổi lễ thành lập đội Việt Nam Tuyên truyền Giải phóng Quân
+Ngày 3 tháng 5 năm 1940, Võ Nguyên Giáp với bí danh là Dương Hoài Nam (楊懷南) cùng Phạm Văn Đồng lên Lào Cai rồi vượt biên sang Trung Quốc để gặp Hồ Chí Minh.[28]
+
+Chỉ sau một thời gian ngắn, Hồ Chí Minh đã thấy Võ Nguyên Giáp là người triển vọng nên liên hệ với Đảng cộng sản Trung Quốc và cử anh đi học quân sự tại căn cứ địa Diên An. Trên đường tới Diên An, anh được Hồ Chí Minh gọi quay lại vì tình hình thế giới có nhiều thay đổi lớn. Ở châu Âu, phát xít Đức đã xâm chiếm Pháp. Hồ Chí Minh nhận định tình hình Đông Dương sẽ chuyển biến nhanh, cần gấp rút trở về nước chuẩn bị đón thời cơ.
+
+Ông gia nhập Đảng Cộng sản Đông Dương trong năm này và bắt đầu các hoạt động của mình trong Việt Nam Độc lập Đồng minh Hội, một tổ chức chống phát-xít và đấu tranh cho độc lập của Việt Nam. Năm 1941 đúng dịp tết Nguyên đán Tân Tỵ, Võ Nguyên Giáp cùng Hồ Chí Minh trở về Cao Bằng. Trong thời gian ở hang Pác Bó, Hồ Chí Minh tiên đoán cách mạng sẽ thành công vào năm 1945, một dự đoán chuẩn xác: "Trong 5 năm nữa (tính từ 1941) cách mạng sẽ thành công, điều chúng ta mong đợi sẽ tỏa sáng". Niềm tin sắt đá đó đã giúp Võ Nguyên Giáp và các đồng chí có thêm niềm tin vào tương lai.
+
+Đời sống ở Việt Bắc rất cực khổ, ông kể: "Tìm được cái ăn đã là chiến công. Chúng tôi phải chia nhau từng củ sắn, từng bắp ngô". Nhiều người bối rối dao động, có người e ngại: làm sao Cách mạng thành công khi không có súng và lấy đâu ra súng? Những lúc ấy, ông không bao giờ quên lời dạy của Hồ Chủ tịch: "Chúng ta sẽ dựa vào sức mình là chính cùng với một ít viện trợ từ nước ngoài. Mọi việc đều do nhân dân mà nên. Người trước súng sau, có nhân dân là có tất cả.".[29]
+
+Ông tham gia xây dựng cơ sở cách mạng, mở lớp huấn luyện quân sự cho Việt Minh ở Cao Bằng. Trong thời gian này, Pháp tăng cường càn quét Việt Bắc, ai mang tài liệu Việt Minh sẽ bị bắn ngay. Võ Nguyên Giáp nhớ lại: trong thời gian này, ông thường mang theo một quả lựu đạn để nếu bị bắt thì sẽ cho nổ để vừa chết nhanh chóng vừa kéo theo được vài tên địch.
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2017–2023 Cong Ty 1 Thanh Vien , Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
